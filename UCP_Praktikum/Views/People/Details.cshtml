@@ -1,0 +1,42 @@
+﻿@model UCP_Praktikum.Models.Person
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Person</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Nama Member")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NmPerson)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Nomor Telepon")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NoTelp)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Alamat)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Alamat)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdPerson">Edit</a> |
+    <a asp-action="Index">Kembali ke Daftar</a>
+</div>

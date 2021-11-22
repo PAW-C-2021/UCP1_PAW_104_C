@@ -1,0 +1,53 @@
+﻿@model IEnumerable<UCP_Praktikum.Models.Person>
+
+@{
+    ViewData["Title"] = "Peminjam";
+}
+
+<h1>Data Member</h1>
+
+<p>
+    <a asp-action="Create">Tambah Member</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Nama Member")
+            </th>
+            <th>
+                @Html.DisplayName("Nomor Telepon")
+            </th>
+            <th>
+                @Html.DisplayName("Jenis Kelamin")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alamat)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NmPerson)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoTelp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alamat)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdPerson"><i class="fas fa-edit"></i></a> |
+                <a asp-action="Details" asp-route-id="@item.IdPerson"><i class="fas fa-info"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.IdPerson"><i class="fas fa-trash-alt"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
